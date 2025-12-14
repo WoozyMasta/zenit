@@ -456,8 +456,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // total
     animateValue("valTotal", data.length);
 
-    // unique IP:Port
-    const uniqueServers = new Set(data.map(d => `${d.ip}:${d.port}`));
+    // unique online IP:Port
+    const online = data.filter(d => d.game_version);
+    const uniqueServers = new Set(online.map(d => `${d.ip}:${d.port}`));
     animateValue("valUnique", uniqueServers.size);
 
     // unique IP (host)
