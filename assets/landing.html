@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zenit</title>
+  <link href="/css/landing.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+  <link rel="manifest" href="/data/site.webmanifest">
+</head>
+
+<body>
+
+  <!-- Background Animation -->
+  <canvas id="bg-canvas"></canvas>
+
+  <div class="wrapper">
+    <div class="content-card">
+      <header>
+        <div>
+          <h1 data-i18n="title"><span class="brand-accent">Z</span>enit</h1>
+          <div class="subtitle" data-i18n="subtitle">Insight fueling Open Source.</div>
+        </div>
+        <button id="langBtn" class="lang-btn">RU</button>
+      </header>
+
+      <main>
+        <h2 data-i18n="hero_title">Why Telemetry?</h2>
+        <p data-i18n="hero_desc">
+          I develop server-side modifications for DayZ. Since they are not loaded by clients and can be obtained via
+          various methods (Steam Workshop, GitHub, or built from source), I have zero visibility on their actual usage.
+        </p>
+
+        <div class="motivation-box">
+          <strong data-i18n="motivation_title">Metrics = Motivation</strong><br>
+          <span data-i18n="motivation_text">Knowing that my work brings value is my fuel. Disabling telemetry disables
+            my motivation.</span>
+        </div>
+
+        <h2 data-i18n="privacy_title">Privacy First</h2>
+        <ul class="privacy-list">
+          <li data-i18n="privacy_point_1">No personal data collected.</li>
+          <li data-i18n="privacy_point_2">Only App Name, Version, Type and Port.</li>
+          <li data-i18n="privacy_point_3">One request per restart.</li>
+        </ul>
+
+        <!-- JSON body example block -->
+        <div style="margin-top: 1rem;">
+          <div class="code-header" data-i18n="example_title">Data Payload Example</div>
+          <div class="code-container">
+            <pre>
+<span class="c-punc">{</span>
+  <span class="c-key">"application"</span><span class="c-punc">:</span> <span class="c-str">"MetricZ"</span><span class="c-punc">,</span>
+  <span class="c-key">"version"</span><span class="c-punc">:</span> <span class="c-str">"1.1.0"</span><span class="c-punc">,</span>
+  <span class="c-key">"type"</span><span class="c-punc">:</span> <span class="c-str">"steam"</span><span class="c-punc">,</span>
+  <span class="c-key">"port"</span><span class="c-punc">:</span> <span class="c-num">27016</span>
+<span class="c-punc">}</span>
+</pre>
+          </div>
+        </div>
+
+      </main>
+
+      <footer>
+        <span><a href="https://github.com/WoozyMasta/zenit" class="repo-link" data-i18n="footer_text">Open Source Software.</a></span>
+      </footer>
+    </div>
+  </div>
+
+  <script src="/js/landing.min.js"></script>
+</body>
+
+</html>

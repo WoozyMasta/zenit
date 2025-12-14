@@ -1,0 +1,34 @@
+{
+  "en": {
+    "title": "Zenit",
+    "subtitle": "Insight fueling Open Source.",
+    "lang_switch": "RU",
+    "hero_title": "Why Telemetry Matters?",
+    "hero_desc": "I develop server-side modifications for DayZ. Since they are not loaded by clients and can be obtained via various methods (Steam Workshop, GitHub, or built from source), I have zero visibility on their actual usage.",
+    "motivation_title": "Metrics = Motivation",
+    "motivation_text": "Knowing that my work brings value to X people is my fuel. It pushes me to fix bugs and create new features. Telemetry is optional, but by disabling it, you are disabling my motivation.",
+    "privacy_title": "Privacy First",
+    "privacy_point_1": "No personal or sensitive data collected.",
+    "privacy_point_2": "Only App Name, Version, Type and Port (to identify unique servers).",
+    "privacy_point_3": "One single heartbeat per restart (10-20 min uptime).",
+    "example_title": "Data Payload Example",
+    "footer_text": "Open Source Software built with passion.",
+    "dashboard_link": "View Statistics"
+  },
+  "ru": {
+    "title": "Зенит",
+    "subtitle": "Данные, которые вдохновляют.",
+    "lang_switch": "EN",
+    "hero_title": "Зачем нужна телеметрия?",
+    "hero_desc": "Я разрабатываю серверные модификации для DayZ. Так как они не загружаются клиентами и могут быть установлены разными путями (Steam Workshop, GitHub или собраны из исходников), у меня нет никакой статистики их использования.",
+    "motivation_title": "Метрики = Мотивация",
+    "motivation_text": "Видеть реальные активные сервера — это моё топливо. Это доказывает, что труд не напрасен, и мотивирует исправлять баги и пилить новые фичи. Телеметрию можно отключить, но отключая её — вы отключаете мою мотивацию.",
+    "privacy_title": "Приватность",
+    "privacy_point_1": "Никаких личных или чувствительных данных.",
+    "privacy_point_2": "Только Имя мода, Версия, Тип и Порт (чтобы различать сервера).",
+    "privacy_point_3": "Один запрос через 10-20 минут после старта.",
+    "example_title": "Пример отправляемых данных",
+    "footer_text": "Решения с открытым исходным кодом, созданные с душой.",
+    "dashboard_link": "Смотреть статистику"
+  }
+}
