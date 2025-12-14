@@ -13,6 +13,15 @@ and this project adheres to [Semantic Versioning][].
 ### Removed
 -->
 
+## [0.1.1][] - 2025-12-14
+
+### Changed
+
+* Fixed a bug where multiple application names could not be defined using
+  the `ZENIT_ALLOWED_APPS` environment variable.
+
+[0.1.1]: https://github.com/WoozyMasta/zenit/compare/0.1.0...0.1.1
+
 ## [0.1.0][] - 2025-12-14
 
 ### Added

@@ -35,7 +35,7 @@ type Server struct {
 
 	Address     string   `short:"l" long:"address" env:"LISTEN_ADDRESS" description:"Server listen address" default:":8080"`
 	AuthToken   string   `short:"t" long:"auth-token" env:"AUTH_TOKEN" description:"Admin authentication token"`
-	AllowedApps []string `short:"a" long:"allowed-app" env:"ALLOWED_APPS" description:"List of allowed application names" default:"MetricZ"`
+	AllowedApps []string `short:"a" long:"allowed-app" env:"ALLOWED_APPS" description:"List of allowed application names" default:"MetricZ" env-delim:","`
 	MaxBodySize int64    `long:"max-body-size" env:"MAX_BODY_SIZE" description:"Max body size for incoming requests" default:"512"`
 	TrustProxy  bool     `long:"trust-proxy" env:"TRUST_PROXY" description:"Trust X-Forwarded-For headers"`
 	IgnoreUA    bool     `long:"ignore-user-agent" env:"IGNORE_USER_AGENT" description:"Disable User-Agent validation entirely"`

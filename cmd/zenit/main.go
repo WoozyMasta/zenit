@@ -18,13 +18,20 @@ import (
 	"github.com/woozymasta/zenit/internal/maintenance"
 	"github.com/woozymasta/zenit/internal/server"
 	"github.com/woozymasta/zenit/internal/storage"
+	"github.com/woozymasta/zenit/internal/vars"
 )
 
 func main() {
 	cfg := config.Parse()
 
 	logger.Setup(cfg.Logger)
-	log.Info().Msg("Starting zenit service...")
+	log.Info().
+		Strs("apps", cfg.Server.AllowedApps).
+		Str("db", cfg.Storage.Path).
+		Str("mmdb", cfg.GeoIP.Path).
+		Str("version", vars.Version).
+		Time("build", vars.BuildTime).
+		Msg("Starting zenit service...")
 
 	// GeoIP Update
 	log.Info().Msg("Checking GeoIP database...")
