@@ -32,6 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let isoMap = {};
   let nameToIso = {};
   let currentCountry = null;
+  let pieFilters = {
+    country: null,
+    os: null,
+    version: null,
+    map: null,
+  };
 
   // Sort & Pagination State
   let sortKey = 'count';
@@ -53,6 +59,10 @@ document.addEventListener('DOMContentLoaded', () => {
     topServers: initChart('barTopServers'),
     mapName: initChart('pieMap'),
   };
+  bindPieFilter(charts.country, 'country');
+  bindPieFilter(charts.os, 'os');
+  bindPieFilter(charts.version, 'version');
+  bindPieFilter(charts.mapName, 'map');
 
   Object.values(charts).forEach(c => c && c.setOption({
     backgroundColor: 'transparent'
@@ -167,10 +177,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // Global Filter for Charts
     const data = rawData.filter(d => {
       const matchApp = (filterApp === 'all' || d.application === filterApp);
-      const matchCountry = (currentCountry === null || d.country_code === currentCountry);
+      const matchCountry =
+        (currentCountry === null || d.country_code === currentCountry) &&
+        (pieFilters.country === null || d.country_code === pieFilters.country);
+
+      const matchOS = pieFilters.os === null || d.server_os === pieFilters.os;
+      const matchVer = pieFilters.version === null || d.version === pieFilters.version;
+      const matchMap = pieFilters.map === null || d.map_name === pieFilters.map;
+
       const seenTime = new Date(d.last_seen);
       const matchTime = seenTime >= cutoff;
-      return matchApp && matchCountry && matchTime;
+
+      return matchApp && matchCountry && matchOS && matchVer && matchMap && matchTime;
     });
 
     calculateStats(data);
@@ -729,6 +747,15 @@ document.addEventListener('DOMContentLoaded', () => {
       name,
       value
     }));
+  }
+
+  function bindPieFilter(chart, key) {
+    if (!chart) return;
+    chart.on('click', params => {
+      const v = params.name;
+      pieFilters[key] = (pieFilters[key] === v) ? null : v;
+      updateDashboard();
+    });
   }
 
   function setupTableSort(table) {
