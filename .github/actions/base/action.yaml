@@ -18,6 +18,10 @@ runs:
       shell: bash
       run: make tools
 
+    - name: Prepare assets
+      shell: bash
+      run: make minify
+
     - name: Check
       shell: bash
       run: make check
