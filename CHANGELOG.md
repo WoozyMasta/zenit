@@ -17,8 +17,11 @@ and this project adheres to [Semantic Versioning][].
 
 ### Added
 
-* Game servers counter now show only online servers
 * All pie chart with filtration
+
+### Changed
+
+* Game servers counter now show only online servers
 
 ## [0.1.1][] - 2025-12-14
 

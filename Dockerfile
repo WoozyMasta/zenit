@@ -2,7 +2,7 @@
 FROM docker.io/golang:1.25-alpine AS build
 
 # hadolint ignore=DL3018
-RUN ["apk", "add", "--no-cache", "make", "bash"]
+RUN ["apk", "add", "--no-cache", "make", "bash", "git"]
 WORKDIR /src
 COPY go.mod go.sum ./
 RUN ["go", "mod", "download"]
