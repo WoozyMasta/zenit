@@ -55,8 +55,6 @@ SystemCallErrorNumber=EPERM
 
 # Network
 RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
-SocketBindAllow=8080
-SocketBindDeny=any
 
 # Resources
 LimitNOFILE=65536
