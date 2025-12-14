@@ -77,6 +77,50 @@ Protected via HTTP Basic Auth or Bearer token.
 * `GET /api/a2s` - Proxy A2S query to a remote server.
 * `DELETE /api/node` - Remove node.
 
+## Install with Systemd
+
+You can `ctrl+c/v`
+
+```bash
+# install app
+sudo curl -sSfLo /usr/local/bin/zenit \
+  https://github.com/WoozyMasta/zenit/releases/latest/download/zenit-linux-amd64
+sudo chmod +x /usr/local/bin/zenit
+
+# check it works
+zenit -v
+
+# install systemd service
+sudo curl -sSfLo /etc/systemd/system/zenit.service \
+  https://raw.githubusercontent.com/WoozyMasta/zenit/master/zenit.service
+sudo systemctl daemon-reload
+
+# install config
+sudo curl -sSfLo /etc/default/zenit \
+  https://raw.githubusercontent.com/WoozyMasta/zenit/master/.env
+
+# add system user and group
+sudo groupadd --system zenit
+sudo useradd --system \
+  --gid zenit \
+  --home /var/lib/zenit \
+  --shell /usr/sbin/nologin \
+  zenit
+
+# make work dir
+sudo mkdir -p /var/lib/zenit
+sudo chown zenit:zenit /var/lib/zenit
+sudo chmod 0750 /var/lib/zenit
+
+# edit settings, change ZENIT_AUTH_TOKEN !!!
+sudo editor /etc/default/zenit
+
+# start, check and enable
+sudo systemctl start zenit.service
+sudo systemctl status zenit.service
+sudo systemctl enable zenit.service
+```
+
 ## Maintenance
 
 The binary supports standalone maintenance modes to clean up the database.
