@@ -23,7 +23,7 @@ and this project adheres to [Semantic Versioning][].
 
 * Game servers counter now show only online servers
 
-[0.1.2]: https://github.com/WoozyMasta/zenit/compare/0.1.1...0.1.2
+[0.1.2]: https://github.com/WoozyMasta/zenit/compare/v0.1.1...v0.1.2
 
 ## [0.1.1][] - 2025-12-14
 
@@ -32,7 +32,7 @@ and this project adheres to [Semantic Versioning][].
 * Fixed a bug where multiple application names could not be defined using
   the `ZENIT_ALLOWED_APPS` environment variable.
 
-[0.1.1]: https://github.com/WoozyMasta/zenit/compare/0.1.0...0.1.1
+[0.1.1]: https://github.com/WoozyMasta/zenit/compare/v0.1.0...v0.1.1
 
 ## [0.1.0][] - 2025-12-14
 
