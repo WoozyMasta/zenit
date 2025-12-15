@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning][].
 ### Removed
 -->
 
-## Unreleased
+## [0.1.2][] - 2025-12-15
 
 ### Added
 
@@ -22,6 +22,8 @@ and this project adheres to [Semantic Versioning][].
 ### Changed
 
 * Game servers counter now show only online servers
+
+[0.1.2]: https://github.com/WoozyMasta/zenit/compare/0.1.1...0.1.2
 
 ## [0.1.1][] - 2025-12-14
 
